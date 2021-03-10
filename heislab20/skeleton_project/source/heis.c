@@ -35,6 +35,7 @@ void door_delay(int seconds){
         while( hardware_read_stop_signal()) {
             hardware_command_stop_light(1);
             start_time = clock();
+            stop_button();
         }
         hardware_command_stop_light(0);
         read_floor_signal();
@@ -48,6 +49,7 @@ void open_door(){
         door_delay(2000);
         door = 0;
         hardware_command_door_open(door);
+       
     }
     
     
