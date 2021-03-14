@@ -3,11 +3,7 @@
 #include <signal.h>
 #include <unistd.h>
 #include <time.h>
-
-
-
 #include "orders.h"
-
 
 void startup();
 void out_of_bounds();

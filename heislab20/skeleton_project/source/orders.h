@@ -2,10 +2,13 @@
 
 void execute_order();
 void go_to_floor(float floor);
-void read_floor_signal();
+void update_orders();
 void stop_button();
 int check_if_stop(int f);
 int check_close(int f);
-int check_below();
+int check_below(int f);
 int check_above(int floor);
-int find_order();
+float get_current_floor();
+void set_elevator_movement(float floor, float current_floor);
+void clear_floor_orders(int floor);
+void clear_all_orders();
