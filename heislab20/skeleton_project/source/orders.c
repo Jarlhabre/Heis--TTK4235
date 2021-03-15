@@ -11,7 +11,6 @@ HardwareOrder order_types[3] = {
         HARDWARE_ORDER_DOWN
     };
 
-
 void go_to_floor(float floor){
     if(get_floor() == floor){
         clear_floor_orders(floor);
@@ -43,11 +42,11 @@ void go_to_floor(float floor){
             return;
         }
         if(elevator_movement ==1){
-            if(check_below(floor)!=0){
-                floor = check_below(floor);
+            if(check_below(f)!=0){
+                floor = check_below(f);
                 }
             }
-        }
+        } 
     clear_floor_orders(get_floor());
     
     hardware_command_movement(HARDWARE_MOVEMENT_STOP);
@@ -91,7 +90,6 @@ int check_if_stop(int f){
     case 2: 
         if(order_indicator[f-1][1] || order_indicator[f-1][0]){
             clear_floor_orders(f);
-
            return 1;  
        } 
         break;

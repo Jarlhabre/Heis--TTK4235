@@ -31,6 +31,7 @@ void door_delay(int seconds){
         while (hardware_read_obstruction_signal()){
             hardware_command_door_open(1);
             start_time = clock();
+            update_orders();
         }
         while(hardware_read_stop_signal()) {
             hardware_command_stop_light(1);
@@ -40,14 +41,13 @@ void door_delay(int seconds){
         hardware_command_stop_light(0);
         update_orders();
     }
-    
 }
 
 void open_door(){
     int door = 1;
     while (door){
         hardware_command_door_open(door);
-        door_delay(2000);
+        door_delay(2200);
         door = 0;
         hardware_command_door_open(door);
     }
